@@ -22,9 +22,9 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     else:
-        username = request.form.get('username')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
+        username = request.form.get('username').strip()
+        password1 = request.form.get('password1').strip()
+        password2 = request.form.get('password2').strip()
         message = validate_login_register(username, password1, password2)
         flash(message)
         if '成功' in message:
@@ -65,8 +65,8 @@ def question():
         return render_template('question.html')
     else:
         if hasattr(g, 'user'):
-            question_title = request.form.get('question_title')
-            question_desc = request.form.get('question_desc')
+            question_title = request.form.get('question_title').strip()
+            question_desc = request.form.get('question_desc').strip()
             author_id = g.user.id
             new_question = Questions(title=question_title, content=question_desc, author_id=author_id)
             db.session.add(new_question)
