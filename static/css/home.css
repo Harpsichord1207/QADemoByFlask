@@ -1,0 +1,43 @@
+.body-container ul{
+    list-style: none;
+    padding: 0 10px;
+}
+
+.body-container li{
+    overflow: hidden;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar-group{
+    width: 38px;
+    float: left;
+}
+
+.img-circle{
+    width: 38px;
+}
+
+.question-group{
+    margin-left: 10px;
+    width: 525px;
+    float: left;
+}
+
+.question-title{
+    font-weight: 900;
+    color: #259;
+}
+
+.question-content{
+    text-indent: 2em;
+    padding-bottom: 10px;
+}
+
+.question-info{
+    text-align: right;
+}
+
+.question-author{
+    margin-right: 10px;
+}

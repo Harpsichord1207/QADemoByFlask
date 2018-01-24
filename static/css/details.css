@@ -1,0 +1,51 @@
+h3.question-title {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.question-info{
+    text-align: center;
+}
+
+.question-info span{
+    padding: 0 10px;
+}
+
+.question-content{
+    margin: 0 6px;
+    padding: 3px;
+    text-indent: 2em;
+    border: 1px crimson solid;
+    border-radius: 5px;
+}
+
+.comments-container{
+    margin: 0 6px;
+    overflow: hidden;
+}
+
+.comments-container h4{
+    margin-top: 0;
+}
+
+.comments-container .form-group{
+    margin-bottom: 5px;
+}
+
+#sep-line{
+    border: 0;
+    border-bottom: 2px solid gainsboro;
+}
+
+.comments-list-container ul{
+    padding: 0 12px;
+}
+
+.comments-list-container ul li{
+    list-style: none;
+    text-indent: 2em;
+}
+
+.comments-info span {
+    padding: 0 10px;
+}

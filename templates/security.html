@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/register_login.css') }}"/>
+{% endblock %}
+
+{% block page_name %}安全{% endblock %}
+
+{% block body_part %}
+<h3>修改密码</h3>
+<form class="form" action="" method="POST">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">①</span>
+      <input type="password" class="form-control" placeholder="请输入原始密码" aria-describedby="sizing-addon1" name="o_password">
+    </div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">②</span>
+      <input type="password" class="form-control" placeholder="请输入新密码" aria-describedby="sizing-addon1" name="password1">
+    </div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">③</span>
+      <input type="password" class="form-control" placeholder="请再次确认密码" aria-describedby="sizing-addon1" name="password2">
+    </div>
+    <div class="register-button">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">确认</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/details.css') }}"/>
+{% endblock %}
+
+{% block page_name %}详情{% endblock %}
+
+{% block body_part %}
+    <h3 class="question-title">{{ question.title }}</h3>
+    <p class="question-info">
+        <span>作者：{{ question.author.username }}</span>
+        <span>时间：{{ question.create_time }}</span>
+    </p>
+    <hr>
+    <p class="question-content">
+        {{ question.content }}
+    </p>
+    <hr/>
+    <div class="comments-container">
+        <h4>评论({{ question.comments | length }}):</h4>
+        <form method="POST" action="">
+            <div class="form-group">
+                <textarea class="form-control" rows="2" placeholder="评论详情" name="comment_desc"></textarea>
+            </div>
+            <div class="form-group" style="text-align: right;">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+    <hr id="sep-line"/>
+    <div class="comments-list-container">
+        <ul>
+            <!-- 在模板中排序 -->
+            {# {% for comment in question.comments | sort(attribute='create_time',reverse=true) %}  #}
+
+            <!-- 模型相互关联时排序好 -->
+            {% for comment in question.comments %}
+                <li>
+                    <div class="comments-content">
+                        {{ comment.content }}
+                    </div>
+                    <div class="comments-info" style="text-align: right">
+                        <span>{{ comment.author.username }}</span>
+                        <span>{{ comment.create_time }}</span>
+                    </div>
+                </li>
+                <hr/>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

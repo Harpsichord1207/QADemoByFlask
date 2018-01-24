@@ -1,0 +1,16 @@
+.body-container{
+    overflow: hidden;
+}
+
+.informs{
+    width: 560px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+span.key-message{
+    color: #225599;
+}

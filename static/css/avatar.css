@@ -1,0 +1,15 @@
+.avatar-infos{
+    text-align: center;
+}
+
+.avatar{
+    width: 160px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.avatar-input-form{
+    margin: 5px;
+    padding-bottom: 5px;
+}

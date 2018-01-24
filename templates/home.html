@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}"/>
+{% endblock %}
+
+{% block page_name %}
+{% if search_title %}查找{% else %}首页{% endif %}
+{% endblock %}
+
+{% block body_part %}
+<ul>
+{% for question in questions %}
+    <li>
+        <div class="avatar-group">
+            <img src="{{ url_for('static',filename=question.author.avatar_path) }}" class="img-circle"/>
+        </div>
+        <div class="question-group">
+            <p class="question-title"><a href="{{ url_for('details',question_id=question.id) }}">{{ question.title }}</a></p>
+            <p class="question-content">{{ question.content }}</p>
+            <p class="question-info">
+                <span class="question-author">{{ question.author.username }}</span>
+                <span class="question-time">{{ question.create_time }}</span>
+            </p>
+        </div>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

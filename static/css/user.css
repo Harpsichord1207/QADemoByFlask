@@ -1,0 +1,37 @@
+.body-container{
+    overflow: hidden;
+}
+
+.avatar-infos{
+    width: 160px;
+    float: left;
+    margin: 5px;
+}
+img.avatar{
+    width: inherit;
+    border-radius: 5px;
+}
+
+.basic-infos{
+    border-radius: 5px;
+    float: left;
+    border: gray 1px solid;
+    padding: 15px;
+    height: 160px;
+    margin: 5px;
+}
+
+.functions-container{
+    float: left;
+    width: 120px;
+    height: 160px;
+    border-radius: 5px;
+    border: 1px gray solid;
+    margin: 5px;
+}
+
+.functions-container > div{
+    padding-top: 26px;
+    padding-right: 3px;
+    padding-left: 3px;
+}

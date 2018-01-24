@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/avatar.css') }}"/>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-fileinput/4.4.6/css/fileinput.min.css"/>
+<script src="https://cdn.bootcss.com/bootstrap-fileinput/4.4.6/js/fileinput.min.js"></script>
+{% endblock %}
+
+{% block page_name %}头像{% endblock %}
+
+{% block body_part %}
+<div class="avatar-infos">
+    <img class="avatar" src="{{ url_for('static',filename=login_user.avatar_path) }}"/>
+</div>
+<form class="avatar-input-form" method="POST" enctype="multipart/form-data">
+    <input name="avatar_upload" type="file" class="file" data-show-preview="false"/>
+</form>
+{% endblock %}

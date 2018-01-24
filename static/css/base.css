@@ -1,0 +1,28 @@
+body{
+    background: #F3F3F3;
+}
+
+.body-container{
+    width: 600px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.navbar-brand{
+    padding: 0 10px 0 5px;
+}
+
+.logo{
+    height: 50px;
+}
+
+.flash-message ul{
+    padding: 0;
+    list-style: none;
+    width: 600px;
+    margin: 5px auto;
+}
+.alert{
+    text-align: center;
+}

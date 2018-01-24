@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/user.css') }}"/>
+{% endblock %}
+
+{% block page_name %}用户{% endblock %}
+
+{% block body_part %}
+    <div class="avatar-infos">
+        <img class="avatar" src="{{ url_for('static',filename=login_user.avatar_path) }}"/>
+    </div>
+    <div class="basic-infos">
+        <h4>用户名：{{ login_user.username }}</h4>
+        <h4>创建时间：{{ login_user.register_time }}</h4>
+        <h4>发布问答数：{{ login_user.questions | length }}</h4>
+        <h4>发布评论数：{{ login_user.comments | length }}</h4>
+    </div>
+    <div class="functions-container">
+        <div class="change-passwd">
+            <button type="submit" class="btn btn-primary btn-block" onclick="location='{{ url_for('security') }}'">
+                修改密码
+            </button>
+        </div>
+        <div class="change-avatar">
+            <button type="submit" class="btn btn-primary btn-block" onclick="location='{{ url_for('avatar') }}'">修改头像
+            </button>
+        </div>
+    </div>
+{% endblock %}

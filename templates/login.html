@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/register_login.css') }}"/>
+{% endblock %}
+
+{% block page_name %}登录{% endblock %}
+
+{% block body_part %}
+<h3>登录</h3>
+<form class="form" action="" method="POST">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">用户</span>
+      <input type="text" class="form-control" placeholder="请输入用户名" aria-describedby="sizing-addon1" name="username">
+    </div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1">密码</span>
+      <input type="password" class="form-control" placeholder="请输入密码" aria-describedby="sizing-addon1" name="password">
+    </div>
+    <div class="login-button">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+h3{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.form{
+    width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.form > div{
+    padding-top: 8px;
+}
