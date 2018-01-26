@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, g
 from models import db, Users, Questions, Comments
 from werkzeug.security import generate_password_hash
+from werkzeug import secure_filename
 from sqlalchemy import or_
 from os import path
-from exts import validate_login_register, validate_change_password
+from exts import validate_login_register, validate_change_password, allowed_file
 import config
 
 app = Flask(__name__)
@@ -138,13 +139,25 @@ def security():
 def avatar():
     if request.method == 'POST':
         file = request.files['avatar_upload']
-        base_path = path.abspath(path.dirname(__file__))
-        filename = str(g.user.id) + '.' + file.filename.rsplit('.', 1)[1]
-        file_path = path.join(base_path, 'static', 'images', 'uploads', filename)
-        file.save(file_path)
-        g.user.avatar_path = 'images/uploads/' + filename
-        db.session.commit()
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            base_path = path.abspath(path.dirname(__file__))
+            filename = str(g.user.id) + '.' + filename.rsplit('.', 1)[1]
+            file_path = path.join(base_path, 'static', 'images', 'uploads', filename)
+            file.save(file_path)
+            g.user.avatar_path = 'images/uploads/' + filename
+            db.session.commit()
     return render_template('avatar.html')
+
+
+@app.route('/tinymce/', methods=['GET', 'POST'])
+def tinymce():
+    if request.method == 'GET':
+        return render_template('tinymce.html')
+    else:
+        contents = request.form.get('contents')
+        # print(contents)
+        return render_template('tinymce.html', contents=contents)
 
 
 @app.before_request

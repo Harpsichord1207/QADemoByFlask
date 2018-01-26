@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block static_files %}
+    <script src="{{ url_for('static', filename='tinymce/js/tinymce/tinymce.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/tinymce_setup.js') }}"></script>
+{% endblock %}
+
+{% block page_name %}TinyMCE{% endblock %}
+
+{% block body_part %}
+  <form method="POST">
+    <textarea id="tinymce-content" name="contents">Hello, World!</textarea>
+    <button type="submit" class="btn btn-lg">提交</button>
+  </form>
+    <div class="tinymce-posted-data" esca>
+    {{ contents | safe }}
+    </div>
+{% endblock %}

@@ -4,9 +4,14 @@ h3{
 }
 
 .form{
-    width: 480px;
+    width: 540px;
     margin: 0 auto;
     overflow: hidden;
+}
+
+.tinymce-group{
+    width: 536px;
+    margin:0 auto;
 }
 
 .form > div{

@@ -17,6 +17,7 @@ h3.question-title {
     text-indent: 2em;
     border: 1px crimson solid;
     border-radius: 5px;
+    /*overflow: hidden;*/
 }
 
 .comments-container{

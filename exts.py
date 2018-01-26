@@ -50,5 +50,10 @@ def validate_change_password(user, o_password, password1, password2):
         return '原始密码错误'
 
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ['jpg', 'jpeg', 'png', 'gif']
+
+
 if __name__ == "__main__":
     pass

@@ -18,8 +18,9 @@ DB = "harp"
 USER = "root"
 PASS = "123456"
 CHARSET = "utf8"
-DB_URI = "mysql+pymysql://{}:{}@{}:{}/{}?charset={}".format \
-(USER, PASS, HOST, PORT, DB, CHARSET)
+DB_URI = "mysql+pymysql://{}:{}@{}:{}/{}?charset={}".format(USER, PASS, HOST, PORT, DB, CHARSET)
 SQLALCHEMY_DATABASE_URI = DB_URI
 
 SECRET_KEY = "THIS-A-SECRET-KEY"
+
+MAX_CONTENT_LENGTH = 1 * 1024 * 1024

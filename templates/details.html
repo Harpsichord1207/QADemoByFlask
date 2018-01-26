@@ -13,9 +13,9 @@
         <span>时间：{{ question.create_time }}</span>
     </p>
     <hr>
-    <p class="question-content">
-        {{ question.content }}
-    </p>
+    <div class="question-content">
+        {{ question.content | safe }}
+    </div>
     <hr/>
     <div class="comments-container">
         <h4>评论({{ question.comments | length }}):</h4>
@@ -38,7 +38,7 @@
             {% for comment in question.comments %}
                 <li>
                     <div class="comments-content">
-                        {{ comment.content }}
+                        {{ comment.content | safe }}
                     </div>
                     <div class="comments-info" style="text-align: right">
                         <span>{{ comment.author.username }}</span>

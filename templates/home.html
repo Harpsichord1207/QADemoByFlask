@@ -17,7 +17,7 @@
         </div>
         <div class="question-group">
             <p class="question-title"><a href="{{ url_for('details',question_id=question.id) }}">{{ question.title }}</a></p>
-            <p class="question-content">{{ question.content }}</p>
+            <p class="question-content">{{ question.content | safe }}</p>
             <p class="question-info">
                 <span class="question-author">{{ question.author.username }}</span>
                 <span class="question-time">{{ question.create_time }}</span>

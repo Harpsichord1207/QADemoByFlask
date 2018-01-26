@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block static_files %}
-<link rel="stylesheet" href="{{ url_for('static',filename='css/question.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/question.css') }}"/>
+    <script src="{{ url_for('static', filename='tinymce/js/tinymce/tinymce.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/tinymce_setup.js') }}"></script>
 {% endblock %}
 
 {% block page_name %}发布{% endblock %}
@@ -12,8 +14,11 @@
     <div class="form-group">
         <input type="text" class="form-control" placeholder="标题" name="question_title">
     </div>
-    <div class="form-group">
-        <textarea class="form-control" rows="6" placeholder="问题描述" name="question_desc"></textarea>
+{#    <div class="form-group">#}
+{#        <textarea class="form-control" rows="6" placeholder="问题描述" name="question_desc"></textarea>#}
+{#    </div>#}
+    <div class="tinymce-group">
+        <textarea id="tinymce-content" name="question_desc"></textarea>
     </div>
     <div class="form-group pull-right">
         <button type="submit" class="btn btn-primary">提交</button>
